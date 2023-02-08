@@ -150,12 +150,14 @@ let valid_nft_image = "";
  */
 
  //7 we need to load outside URL in Phaser before displaying
- preload() {
+ preload() 
+ {
     // set identifier for image url
     this.load.image("validnft", valid_nft_image);
   }
 
-  create() {
+  create() 
+  {
     this.add.image(0, 00, "title");
     // 8.
     // choose NFT to display within game's mainmenu to demonstrate it worked

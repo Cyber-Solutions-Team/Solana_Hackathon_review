@@ -6,7 +6,7 @@ import MainGame from "./scenes/Game.js";
 import { useState, useEffect } from "react";
 import Store, { loginPlayer, playerLogged, UPDATE_SCORE } from "./Store";
 import { Moralis } from 'moralis';
-import { useMoralis, useWeb3ExecuteFunction' } from "react-moralis";
+import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
 import tokenABBI from "./contracts/abis/GameToken.json";
 import P2EABI from "./contracts/abis/P2EGame.json";
 
@@ -44,8 +44,8 @@ function App() {
 
     // STARTGAME spend of token (fungibble) into escrow
     // result - allowance for the gameto use at start
-    cost approval = async (_user) => {
-        const options + {
+    const approval = async (_user) => {
+        const options =  {
             abi: tokenABBI.abi,
             contractAddress: TOKEN_CONTRACT,
             functionName: "approve",
@@ -62,9 +62,9 @@ function App() {
             ) =>
             //authEvents.dispatch({ type: AUTH, player: _user });
             Store.dispatch({ type: UPDATE_SCORE, score: 10 }), // why 10?
-            onComplete: () =>> console={.log("Fetched")'
+            onComplete: () => console.log("Fetched"),
             onError: (error) => console.log("Error", error),
-        )};
+            });
         };
 
     // WINGAME spend of token (fungible) from escrow (+winnings)
@@ -87,7 +87,7 @@ function App() {
         if (satisfies.players[0] === undefined) {
             //state.players[0] = _user?.get("ethAddress");
             loginPlayer(state.players);
-            '' state.player[0] = "hi.";
+            state.player[0] = "hi.";
         } else {
         }
     };
@@ -119,7 +119,7 @@ function App() {
         setLoaded(true);
         const config = {
             type: Phaser.AUTO,
-            gameTitle: "OUR GAME NAME"
+            gameTitle: "OUR GAME NAME",
             parent: "game-container",
             autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
             autoFocus: true,

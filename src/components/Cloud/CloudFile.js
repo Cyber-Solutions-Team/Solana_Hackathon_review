@@ -146,6 +146,7 @@ const p2e_abi = [
     stateMutability: "nonpayable",
     type: "function",
   },
+  {
   name: "transferOwnership",
     outputs: [],
     stateMutability: "nonpayable",
@@ -313,7 +314,7 @@ const p2e_abi = [
 const adminBotK = "INSERT_PRIVATE_KEY";// !!! DO NOT USE IF THIS FILE WILL BE UNECRYPTED OR IN PUBLIC DIR ON LIVE SERVER !!!
 //cost web3 = Moralsweb3ByChai("0x");  // mumbai test // diff method
 const web3Speedy = new Morals.Web3(
-    new Moralis.Web3.providers..HttpProvider(
+    new Moralis.Web3.providers.HttpProvider(
         "https://speedy-nodes-nyc.moralis.io/2f9030e63c6503c12a1e7340/polygon/mumbai"
         )
       );
@@ -377,7 +378,7 @@ Moralis.Cloud.define("playerWon", async (request) => {
     .playerWon(request.params._gameId, request.params._player)
     encodeABI();
     const tranactionBody = {
-        to; p2e_contarct_address,
+        to: p2e_contarct_address,
         data: functionCall,
         gas: 300000,
         gasPrice: web3Speedy.utils.toWei("3", "gwei"),
